@@ -24,7 +24,7 @@ return [
     | to your script bundler like webpack.
     |
     */
-    'include_js' => false,
+    'include_js' => true,
     
     /*
     |--------------------------------------------------------------------------
@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'default_position' => \Laravelcm\LivewireSlideOvers\Position::Right,
+    'default_position' => \WireComponents\LivewireSlideOvers\Position::Right,
 
     /*
     |--------------------------------------------------------------------------

@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Laravelcm\LivewireSlideOvers;
+namespace WireComponents\LivewireSlideOvers;
 
 use InvalidArgumentException;
 use Livewire\Component;
-use Laravelcm\LivewireSlideOvers\Contracts\PanelContract;
+use WireComponents\LivewireSlideOvers\Contracts\PanelContract;
 
 abstract class SlideOverComponent extends Component implements PanelContract
 {

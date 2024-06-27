@@ -1,12 +1,9 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Laravelcm\LivewireSlideOvers;
+namespace WireComponents\LivewireSlideOvers;
 
 enum Position: string
 {
     case Left = 'left';
-
     case Right = 'right';
 }

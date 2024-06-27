@@ -1,8 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Laravelcm\LivewireSlideOvers;
+namespace WireComponents\LivewireSlideOvers;
 
 use Exception;
 use Illuminate\Contracts\Routing\UrlRoutable;

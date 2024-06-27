@@ -1,5 +1,5 @@
 {
-  "name": "laravelcm/livewire-slide-overs",
+  "name": "batnieluyo/livewire-slide-over",
   "description": "Livewire component that provides drawers (slide overs) that support multiple children while maintaining state.",
   "keywords": [
     "laravel",
@@ -9,8 +9,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Arthur Monney",
-      "email": "monneylobe@gmail.com"
+      "name": "Daniel S",
+      "email": "daniel.wire.opensource@gmail.com"
     }
   ],
   "require": {
@@ -26,18 +26,18 @@
   },
   "autoload": {
     "psr-4": {
-      "Laravelcm\\LivewireSlideOvers\\": "src/"
+      "WireComponents\\LivewireSlideOvers\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Laravelcm\\LivewireSlideOvers\\Tests\\": "tests/"
+      "WireComponents\\LivewireSlideOvers\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Laravelcm\\LivewireSlideOvers\\LivewireSlideOverServiceProvider"
+        "WireComponents\\LivewireSlideOvers\\LivewireSlideOverServiceProvider"
       ]
     }
   },
