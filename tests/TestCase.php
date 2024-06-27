@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Laravelcm\LivewireSlideOvers\Tests;
+namespace WireComponents\LivewireSlideOvers\Tests;
 
 use Livewire\LivewireServiceProvider;
 

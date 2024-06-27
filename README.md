@@ -8,11 +8,11 @@
     <a href="https://packagist.org/packages/batnieluyo/livewire-slide-overs">
         <img src="https://img.shields.io/packagist/dt/batnieluyo/livewire-slide-overs" alt="Total Downloads">
     </a>
-    <a href="https://packagist.org/packages/laravelcm/livewire-slide-overs">
-        <img src="https://img.shields.io/packagist/v/laravelcm/livewire-slide-overs" alt="Latest Stable Version">
+    <a href="https://packagist.org/packages/batnieluyo/livewire-slide-overs">
+        <img src="https://img.shields.io/packagist/v/batnieluyo/livewire-slide-overs" alt="Latest Stable Version">
     </a>
-    <a href="https://packagist.org/packages/laravelcm/livewire-slide-overs">
-        <img src="https://img.shields.io/packagist/l/laravelcm/livewire-slide-overs" alt="License">
+    <a href="https://packagist.org/packages/batnieluyo/livewire-slide-overs">
+        <img src="https://img.shields.io/packagist/l/batnieluyo/livewire-slide-overs" alt="License">
     </a>
 </p>
 
@@ -189,7 +189,7 @@ return [
     |
     */
 
-    'default_position' => \Laravelcm\LivewireSlideOvers\Position::Right,
+    'default_position' => \WireComponents\LivewireSlideOvers\Position::Right,
 
     /*
     |--------------------------------------------------------------------------
