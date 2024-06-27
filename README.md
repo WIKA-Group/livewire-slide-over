@@ -27,7 +27,7 @@ This package is fork of [laravelcm/livewire-slide-overs](https://github.com/lara
 To get started, require the package via Composer
 
 ```shell
-composer require batnieluyo/livewire-slide-overs
+composer require batnieluyo/livewire-slide-over
 ```
 
 ### Usage
@@ -51,7 +51,7 @@ You can run `php artisan make:livewire ShoppingCart` to make the initial Livewir
 
 namespace App\Livewire;
 
-use Laravelcm\LivewireSlideOvers\SlideOverComponent;
+use WireComponents\LivewireSlideOvers\SlideOverComponent;
 
 class ShoppingCart extends SlideOverComponent
 {
@@ -151,7 +151,6 @@ php artisan vendor:publish --tag=livewire-slide-over-config
 ```php
 <?php
 
-declare(strict_types=1);
 
 return [
 
@@ -177,7 +176,7 @@ return [
     | to your script bundler like webpack.
     |
     */
-    'include_js' => false,
+    'include_js' => true,
     
     /*
     |--------------------------------------------------------------------------
