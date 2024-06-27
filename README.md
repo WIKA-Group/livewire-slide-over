@@ -80,7 +80,7 @@ To open a slide over you will need to dispatch an event. To open the `ShoppingCa
 The base modal is made with TailwindCSS. If you use a different CSS framework I recommend that you publish the modal template and change the markup to include the required classes for your CSS framework.
 
 ```
-php artisan vendor:publish --tag=livewire-slide-overs-views
+php artisan vendor:publish --tag=livewire-slide-over-views
 ```
 
 
@@ -145,7 +145,7 @@ You can customize the Modal via the wire-elements-modal.php config file. This in
 To publish the config run the vendor:publish command:
 
 ```
-php artisan vendor:publish --tag=livewire-slide-overs-config
+php artisan vendor:publish --tag=livewire-slide-over-config
 ```
 
 ```php
