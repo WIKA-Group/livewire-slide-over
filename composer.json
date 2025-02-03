@@ -1,16 +1,17 @@
 {
-  "name": "batnieluyo/livewire-slide-over",
+  "name": "wika-group/livewire-slide-over",
   "description": "Livewire component that provides drawers (slide overs) that support multiple children while maintaining state.",
   "keywords": [
     "laravel",
     "slide-overs",
+    "slide-over",
     "livewire"
   ],
   "license": "MIT",
   "authors": [
     {
-      "name": "Daniel S",
-      "email": "daniel.wire.opensource@gmail.com"
+      "name": "WIKA Group",
+      "email": "webapps-admin@wika.com"
     }
   ],
   "require": {

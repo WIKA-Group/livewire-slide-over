@@ -1,36 +1,18 @@
-<p align="center">
-    <a href="https://laravel.com">
-        <img alt="Laravel v10.x" src="https://img.shields.io/badge/Laravel-v10.x-FF2D20">
-    </a>
-    <a href="https://laravel.com">
-        <img alt="Laravel v11.x" src="https://img.shields.io/badge/Laravel-v11.x-FF2D20">
-    </a>
-    <a href="https://packagist.org/packages/batnieluyo/livewire-slide-overs">
-        <img src="https://img.shields.io/packagist/dt/batnieluyo/livewire-slide-overs" alt="Total Downloads">
-    </a>
-    <a href="https://packagist.org/packages/batnieluyo/livewire-slide-overs">
-        <img src="https://img.shields.io/packagist/v/batnieluyo/livewire-slide-overs" alt="Latest Stable Version">
-    </a>
-    <a href="https://packagist.org/packages/batnieluyo/livewire-slide-overs">
-        <img src="https://img.shields.io/packagist/l/batnieluyo/livewire-slide-overs" alt="License">
-    </a>
-</p>
+# Livewire slide over panel
 
-# Livewire Slide over Panel
-
-Slide Over Panel is a Livewire component that provides drawers (slide overs) that support multiple children while maintaining state.
-This package is fork of [laravelcm/livewire-slide-overs](https://github.com/laravelcm/livewire-slide-overs), a livewire component that renders slide over with state management on livewire.
+Slide Over Panel is a Livewire component that provides slide overs that support multiple children while maintaining state.
+This package is fork of [batnieluyo/livewire-slide-over](https://github.com/batnieluyo/livewire-slide-over), a livewire component that renders slide over with state management on livewire.
 
 
 ### Installation
 
-To get started, require the package via Composer
+To get started, require the package via Composer:
 
 ```shell
-composer require batnieluyo/livewire-slide-over
+composer require wika-group/livewire-slide-over
 ```
 
-### Usage
+### Livewire directive
 Add the Livewire directive @livewire('slide-over-panel') directive to your master layout.
 
 ```blade
@@ -213,18 +195,6 @@ return [
 
 ];
 ```
-
-### Test
-wip..
-
-```shell
-composer test
-```
-
-## Credits
-- [laravelcm](https://github.com/laravelcm)
-- [Philo Hermans](https://github.com/philoNL)
-- [All Contributors](../../contributors)
 
 ## License
 Livewire Slide Over is open-sourced software licensed under the [MIT license](LICENSE.md).
