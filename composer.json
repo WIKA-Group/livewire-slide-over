@@ -20,7 +20,7 @@
     "spatie/laravel-package-tools": "^1.15"
   },
   "require-dev": {
-    "orchestra/testbench": "^8.5",
+    "orchestra/testbench": "^9.9",
     "laravel/pint": "^1.1",
     "pestphp/pest": "^2.34",
     "pestphp/pest-plugin-livewire": "^2.1"
