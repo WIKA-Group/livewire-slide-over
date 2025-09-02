@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace WireComponents\LivewireSlideOvers\Tests;
 
 use Livewire\LivewireServiceProvider;
+use WireComponents\LivewireSlideOvers\LivewireSlideOverServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -12,6 +13,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         return [
             LivewireServiceProvider::class,
+            LivewireSlideOverServiceProvider::class,
         ];
     }
 

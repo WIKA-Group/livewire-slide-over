@@ -22,8 +22,7 @@
   "require-dev": {
     "orchestra/testbench": "^9.9",
     "laravel/pint": "^1.1",
-    "pestphp/pest": "^2.34",
-    "pestphp/pest-plugin-livewire": "^2.1"
+    "phpunit/phpunit": "^10.5"
   },
   "autoload": {
     "psr-4": {
@@ -43,7 +42,7 @@
     }
   },
   "scripts": {
-    "test": "vendor/bin/pest",
+    "test": "vendor/bin/phpunit",
     "pint": "vendor/bin/pint"
   },
   "minimum-stability": "dev",
