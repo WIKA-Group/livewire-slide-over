@@ -15,6 +15,6 @@
     "tailwindcss": "^4.1.18"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.13"
+    "@tailwindcss/postcss": "^4.1.18"
   }
 }
