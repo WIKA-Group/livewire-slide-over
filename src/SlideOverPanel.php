@@ -8,10 +8,9 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Reflector;
-use WireComponents\LivewireSlideOvers\Contracts\PanelContract;
 use Livewire\Component;
-use Livewire\Mechanisms\ComponentRegistry;
 use ReflectionClass;
+use WireComponents\LivewireSlideOvers\Contracts\PanelContract;
 
 class SlideOverPanel extends Component
 {
@@ -28,7 +27,7 @@ class SlideOverPanel extends Component
     public function openPanel($component, $arguments = [], $panelAttributes = []): void
     {
         $requiredInterface = PanelContract::class;
-        $componentClass = app(ComponentRegistry::class)->getClass($component);
+        $componentClass = $this->resolveComponentClass($component);
         $reflect = new ReflectionClass($componentClass);
 
         if ($reflect->implementsInterface($requiredInterface) === false) {
@@ -38,7 +37,7 @@ class SlideOverPanel extends Component
         $id = md5($component . serialize($arguments));
 
         $arguments = collect($arguments)
-            ->merge($this->resolveComponentProps($arguments, new $componentClass()))
+            ->merge($this->resolveComponentProps($arguments, new $componentClass))
             ->all();
 
         $this->components[$id] = [
@@ -91,7 +90,7 @@ class SlideOverPanel extends Component
         $instance = app()->make($parameterClassName);
 
         if (! $model = $instance->resolveRouteBinding($parameterValue)) {
-            throw (new ModelNotFoundException())->setModel(get_class($instance), [$parameterValue]);
+            throw (new ModelNotFoundException)->setModel(get_class($instance), [$parameterValue]);
         }
 
         return $model;
@@ -109,6 +108,15 @@ class SlideOverPanel extends Component
         unset($this->components[$id]);
     }
 
+    protected function resolveComponentClass(string $component): string
+    {
+        if (class_exists(\Livewire\Mechanisms\ComponentRegistry::class)) {
+            return app(\Livewire\Mechanisms\ComponentRegistry::class)->getClass($component);
+        }
+
+        return app('livewire.finder')->resolveClassComponentClassName($component);
+    }
+
     public function getListeners(): array
     {
         return [
@@ -119,14 +127,14 @@ class SlideOverPanel extends Component
 
     public function render(): View
     {
-         if (config('livewire-slide-over.include_js', true)) {
-            $jsPath = __DIR__.'/../public/slide-over.js';
+        if (config('livewire-slide-over.include_js', true)) {
+            $jsPath = __DIR__ . '/../public/slide-over.js';
         }
 
         if (config('livewire-slide-over.include_css', false)) {
-            $cssPath = __DIR__.'/../public/slide-over.css';
+            $cssPath = __DIR__ . '/../public/slide-over.css';
         }
-        
+
         return view('livewire-slide-over::slide-over', [
             'jsPath' => $jsPath ?? null,
             'cssPath' => $cssPath ?? null,

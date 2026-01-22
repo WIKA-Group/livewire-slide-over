@@ -3,19 +3,28 @@
 namespace WireComponents\LivewireSlideOvers\Tests;
 
 use Livewire\Livewire;
-use Livewire\Mechanisms\ComponentRegistry;
 use WireComponents\LivewireSlideOvers\Tests\Components\DemoSlideOver;
 
 class LivewireModalComponentTest extends TestCase
 {
-    public function testClosePanel(): void
+    protected function getComponentName(string $class): string
+    {
+        if (class_exists(\Livewire\Mechanisms\ComponentRegistry::class)) {
+            return app(\Livewire\Mechanisms\ComponentRegistry::class)
+                ->getName($class);
+        }
+
+        return app('livewire.finder')->normalizeName($class);
+    }
+
+    public function test_close_panel(): void
     {
         Livewire::test(DemoSlideOver::class)
             ->call('closePanel')
             ->assertDispatched('closePanel', force: false, skipPreviousPanels: 0, destroySkipped: false);
     }
 
-    public function testForceClosePanel(): void
+    public function test_force_close_panel(): void
     {
         Livewire::test(DemoSlideOver::class)
             ->call('forceClose')
@@ -23,7 +32,7 @@ class LivewireModalComponentTest extends TestCase
             ->assertDispatched('closePanel', force: true, skipPreviousPanels: 0, destroySkipped: false);
     }
 
-    public function testModalSkipping(): void
+    public function test_modal_skipping(): void
     {
         Livewire::test(DemoSlideOver::class)
             ->call('skipPreviousPanels', 5)
@@ -42,15 +51,15 @@ class LivewireModalComponentTest extends TestCase
             ->assertDispatched('closePanel', force: false, skipPreviousPanels: 1, destroySkipped: true);
     }
 
-    public function testSlideOverEmitting(): void
+    public function test_slide_over_emitting(): void
     {
         Livewire::test(DemoSlideOver::class)
             ->call('closePanelWithEvents', [
                 'someEvent',
             ])
             ->assertDispatched('someEvent');
-        
-        $name = app(ComponentRegistry::class)->getName(DemoSlideOver::class);
+
+        $name = $this->getComponentName(DemoSlideOver::class);
 
         Livewire::test(DemoSlideOver::class)
             ->call('closePanelWithEvents', [
@@ -63,7 +72,7 @@ class LivewireModalComponentTest extends TestCase
                 ['someEventWithParams', ['param1', 'param2']],
             ])
             ->assertDispatched('someEventWithParams', 'param1', 'param2');
-        
+
         Livewire::test(DemoSlideOver::class)
             ->call('closePanelWithEvents', [
                 $name => ['someEventWithParams', ['param1', 'param2']],
