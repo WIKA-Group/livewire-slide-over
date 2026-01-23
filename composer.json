@@ -1,55 +1,58 @@
 {
-  "name": "wika-group/livewire-slide-over",
-  "description": "Livewire component that provides drawers (slide overs) that support multiple children while maintaining state.",
-  "keywords": [
-    "laravel",
-    "slide-overs",
-    "slide-over",
-    "livewire"
-  ],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "WIKA Group",
-      "email": "webapps-admin@wika.com"
+    "name": "wika-group/livewire-slide-over",
+    "description": "Livewire component that provides drawers (slide overs) that support multiple children while maintaining state.",
+    "keywords": [
+        "laravel",
+        "slide-overs",
+        "slide-over",
+        "livewire"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "WIKA Group",
+            "email": "webapps-admin@wika.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "livewire/livewire": "^3.4 | ^4.0",
+        "spatie/laravel-package-tools": "^1.15"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.9",
+        "laravel/pint": "^1.1",
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "WikaGroup\\LivewireSlideOver\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WikaGroup\\LivewireSlideOver\\Tests\\": "tests/"
+        }
+    },
+    "bin": [
+        "bin/upgrade.php"
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "WikaGroup\\LivewireSlideOver\\LivewireSlideOverServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "pint": "vendor/bin/pint"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
-  ],
-  "require": {
-    "php": "^8.2",
-    "livewire/livewire": "^3.4 | ^4.0",
-    "spatie/laravel-package-tools": "^1.15"
-  },
-  "require-dev": {
-    "orchestra/testbench": "^9.9",
-    "laravel/pint": "^1.1",
-    "phpunit/phpunit": "^10.5"
-  },
-  "autoload": {
-    "psr-4": {
-      "WikaGroup\\LivewireSlideOver\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "WikaGroup\\LivewireSlideOver\\Tests\\": "tests/"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "WikaGroup\\LivewireSlideOver\\LivewireSlideOverServiceProvider"
-      ]
-    }
-  },
-  "scripts": {
-    "test": "vendor/bin/phpunit",
-    "pint": "vendor/bin/pint"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "config": {
-    "allow-plugins": {
-      "pestphp/pest-plugin": true
-    }
-  }
 }
