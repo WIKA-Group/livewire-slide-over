@@ -14,7 +14,7 @@ class LivewireSlideOverUpgrade extends Command
 
     private int $recordsProcessed = 0;
 
-    private array $directories = [];
+    private array $directories = ['app', 'config', 'resources', 'tests'];
 
     public function handle(): int
     {
@@ -59,7 +59,7 @@ class LivewireSlideOverUpgrade extends Command
         }
 
         $this->newLine();
-        $this->info($this->recordsProcessed . 'file(s) processed.');
+        $this->info($this->recordsProcessed . ' file(s) processed.');
 
         return self::SUCCESS;
     }
