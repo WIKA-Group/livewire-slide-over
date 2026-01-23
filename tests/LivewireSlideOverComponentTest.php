@@ -5,7 +5,7 @@ namespace WikaGroup\LivewireSlideOver\Tests;
 use Livewire\Livewire;
 use WikaGroup\LivewireSlideOver\Tests\Components\DemoSlideOver;
 
-class LivewireModalComponentTest extends TestCase
+class LivewireSlideOverComponentTest extends TestCase
 {
     protected function getComponentName(string $class): string
     {
