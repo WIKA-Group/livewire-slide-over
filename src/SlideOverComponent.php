@@ -1,10 +1,10 @@
 <?php
 
-namespace WikaGroup\LivewireSlideOvers;
+namespace WikaGroup\LivewireSlideOver;
 
 use InvalidArgumentException;
 use Livewire\Component;
-use WikaGroup\LivewireSlideOvers\Contracts\PanelContract;
+use WikaGroup\LivewireSlideOver\Contracts\PanelContract;
 
 abstract class SlideOverComponent extends Component implements PanelContract
 {
@@ -79,7 +79,7 @@ abstract class SlideOverComponent extends Component implements PanelContract
 
     public static function panelMaxWidthClass(): string
     {
-        if (! array_key_exists(SlideOverComponent::panelMaxWidth(), static::$maxWidths)) {
+        if (!array_key_exists(SlideOverComponent::panelMaxWidth(), static::$maxWidths)) {
             throw new InvalidArgumentException(
                 sprintf(
                     'Panel max width [%s] is invalid. The width must be one of the following [%s].',

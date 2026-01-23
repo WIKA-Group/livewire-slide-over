@@ -1,6 +1,6 @@
 <?php
 
-namespace WikaGroup\LivewireSlideOvers;
+namespace WikaGroup\LivewireSlideOver;
 
 use Exception;
 use Illuminate\Contracts\Routing\UrlRoutable;
@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Reflector;
 use Livewire\Component;
 use ReflectionClass;
-use WikaGroup\LivewireSlideOvers\Contracts\PanelContract;
+use WikaGroup\LivewireSlideOver\Contracts\PanelContract;
 
 class SlideOver extends Component
 {
@@ -89,7 +89,7 @@ class SlideOver extends Component
 
         $instance = app()->make($parameterClassName);
 
-        if (! $model = $instance->resolveRouteBinding($parameterValue)) {
+        if (!$model = $instance->resolveRouteBinding($parameterValue)) {
             throw (new ModelNotFoundException)->setModel(get_class($instance), [$parameterValue]);
         }
 

@@ -33,7 +33,7 @@ You can run `php artisan make:livewire ShoppingCart` to make the initial Livewir
 
 namespace App\Livewire;
 
-use WikaGroup\LivewireSlideOvers\SlideOverComponent;
+use WikaGroup\LivewireSlideOver\SlideOverComponent;
 
 class ShoppingCart extends SlideOverComponent
 {
@@ -171,7 +171,7 @@ return [
     |
     */
 
-    'default_position' => \WikaGroup\LivewireSlideOvers\Position::Right,
+    'default_position' => \WikaGroup\LivewireSlideOver\Position::Right,
 
     /*
     |--------------------------------------------------------------------------

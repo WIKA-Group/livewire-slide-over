@@ -1,6 +1,6 @@
 <?php
 
-namespace WikaGroup\LivewireSlideOvers;
+namespace WikaGroup\LivewireSlideOver;
 
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;

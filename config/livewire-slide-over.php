@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'default_position' => \WikaGroup\LivewireSlideOvers\Position::Right,
+    'default_position' => \WikaGroup\LivewireSlideOver\Position::Right,
 
     /*
     |--------------------------------------------------------------------------

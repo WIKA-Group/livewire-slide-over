@@ -1,12 +1,12 @@
 <?php
 
-namespace WikaGroup\LivewireSlideOvers\Tests;
+namespace WikaGroup\LivewireSlideOver\Tests;
 
 use Livewire\Livewire;
-use WikaGroup\LivewireSlideOvers\Position;
-use WikaGroup\LivewireSlideOvers\SlideOver;
-use WikaGroup\LivewireSlideOvers\Tests\Components\DemoSlideOver;
-use WikaGroup\LivewireSlideOvers\Tests\Components\InvalidSlideOver;
+use WikaGroup\LivewireSlideOver\Position;
+use WikaGroup\LivewireSlideOver\SlideOver;
+use WikaGroup\LivewireSlideOver\Tests\Components\DemoSlideOver;
+use WikaGroup\LivewireSlideOver\Tests\Components\InvalidSlideOver;
 
 class LivewireSlideOverTest extends TestCase
 {
@@ -110,7 +110,7 @@ class LivewireSlideOverTest extends TestCase
     {
         $component = InvalidSlideOver::class;
         $this->expectException(\Exception::class);
-        $this->expectExceptionMessage("[{$component}] does not implement [WikaGroup\LivewireSlideOvers\Contracts\PanelContract] interface.");
+        $this->expectExceptionMessage("[{$component}] does not implement [WikaGroup\LivewireSlideOver\Contracts\PanelContract] interface.");
 
         Livewire::component('invalid-modal', $component);
         Livewire::test(SlideOver::class)->dispatch('openPanel', component: 'invalid-modal');

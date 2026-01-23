@@ -1,6 +1,6 @@
 <?php
 
-namespace WikaGroup\LivewireSlideOvers\Tests\Components;
+namespace WikaGroup\LivewireSlideOver\Tests\Components;
 
 use Livewire\Component;
 
