@@ -1,6 +1,6 @@
 <?php
 
-namespace WireComponents\LivewireSlideOvers;
+namespace WikaGroup\LivewireSlideOvers;
 
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
@@ -17,6 +17,6 @@ final class LivewireSlideOverServiceProvider extends PackageServiceProvider
 
     public function bootingPackage(): void
     {
-        Livewire::component('slide-over-panel', SlideOverPanel::class);
+        Livewire::component('slide-over', SlideOver::class);
     }
 }

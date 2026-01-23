@@ -1,6 +1,6 @@
 <?php
 
-namespace WireComponents\LivewireSlideOvers;
+namespace WikaGroup\LivewireSlideOvers;
 
 use Exception;
 use Illuminate\Contracts\Routing\UrlRoutable;
@@ -12,7 +12,7 @@ use Livewire\Component;
 use ReflectionClass;
 use WireComponents\LivewireSlideOvers\Contracts\PanelContract;
 
-class SlideOverPanel extends Component
+class SlideOver extends Component
 {
     public ?string $activeComponent;
 

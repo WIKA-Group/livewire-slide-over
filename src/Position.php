@@ -1,6 +1,6 @@
 <?php
 
-namespace WireComponents\LivewireSlideOvers;
+namespace WikaGroup\LivewireSlideOvers;
 
 enum Position: string
 {

@@ -1,7 +1,5 @@
 <?php
 
-namespace WireComponents\LivewireSlideOvers\Contracts;
+namespace WikaGroup\LivewireSlideOvers\Contracts;
 
-interface PanelContract
-{
-}
+interface PanelContract {}

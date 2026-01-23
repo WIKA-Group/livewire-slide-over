@@ -26,18 +26,18 @@
   },
   "autoload": {
     "psr-4": {
-      "WireComponents\\LivewireSlideOvers\\": "src/"
+      "WikaGroup\\LivewireSlideOvers\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "WireComponents\\LivewireSlideOvers\\Tests\\": "tests/"
+      "WikaGroup\\LivewireSlideOvers\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "WireComponents\\LivewireSlideOvers\\LivewireSlideOverServiceProvider"
+        "WikaGroup\\LivewireSlideOvers\\LivewireSlideOverServiceProvider"
       ]
     }
   },

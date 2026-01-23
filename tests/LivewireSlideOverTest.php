@@ -4,7 +4,7 @@ namespace WireComponents\LivewireSlideOvers\Tests;
 
 use Livewire\Livewire;
 use WireComponents\LivewireSlideOvers\Position;
-use WireComponents\LivewireSlideOvers\SlideOverPanel;
+use WireComponents\LivewireSlideOvers\SlideOver;
 use WireComponents\LivewireSlideOvers\Tests\Components\DemoSlideOver;
 use WireComponents\LivewireSlideOvers\Tests\Components\InvalidSlideOver;
 
@@ -33,7 +33,7 @@ class LivewireSlideOverTest extends TestCase
         // Demo slide over unique identifier
         $id = md5($component . serialize($arguments));
 
-        Livewire::test(SlideOverPanel::class)
+        Livewire::test(SlideOver::class)
             ->dispatch('openPanel', component: $component, arguments: $arguments, panelAttributes: $panelAttributes)
             // Verify component is added to $components
             ->assertSet('components', [
@@ -73,7 +73,7 @@ class LivewireSlideOverTest extends TestCase
         // Demo slide over unique identifier
         $id = md5($component . serialize($arguments));
 
-        Livewire::test(SlideOverPanel::class)
+        Livewire::test(SlideOver::class)
             ->dispatch('openPanel', component: $component, arguments: $arguments, panelAttributes: $panelAttributes)
             ->assertSet('components', [
                 $id => [
@@ -90,7 +90,7 @@ class LivewireSlideOverTest extends TestCase
     {
         Livewire::component('demo-slide-over', DemoSlideOver::class);
 
-        Livewire::test(SlideOverPanel::class)
+        Livewire::test(SlideOver::class)
             ->dispatch('openPanel', 'demo-slide-over')
             ->set('components', [
                 'some-component' => [
@@ -113,6 +113,6 @@ class LivewireSlideOverTest extends TestCase
         $this->expectExceptionMessage("[{$component}] does not implement [WireComponents\LivewireSlideOvers\Contracts\PanelContract] interface.");
 
         Livewire::component('invalid-modal', $component);
-        Livewire::test(SlideOverPanel::class)->dispatch('openPanel', component: 'invalid-modal');
+        Livewire::test(SlideOver::class)->dispatch('openPanel', component: 'invalid-modal');
     }
 }
