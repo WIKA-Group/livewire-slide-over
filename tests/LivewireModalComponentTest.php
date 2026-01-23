@@ -1,9 +1,9 @@
 <?php
 
-namespace WireComponents\LivewireSlideOvers\Tests;
+namespace WikaGroup\LivewireSlideOvers\Tests;
 
 use Livewire\Livewire;
-use WireComponents\LivewireSlideOvers\Tests\Components\DemoSlideOver;
+use WikaGroup\LivewireSlideOvers\Tests\Components\DemoSlideOver;
 
 class LivewireModalComponentTest extends TestCase
 {

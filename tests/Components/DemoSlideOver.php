@@ -1,8 +1,8 @@
 <?php
 
-namespace WireComponents\LivewireSlideOvers\Tests\Components;
+namespace WikaGroup\LivewireSlideOvers\Tests\Components;
 
-use WireComponents\LivewireSlideOvers\SlideOverComponent;
+use WikaGroup\LivewireSlideOvers\SlideOverComponent;
 
 class DemoSlideOver extends SlideOverComponent
 {

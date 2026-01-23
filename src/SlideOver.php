@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Reflector;
 use Livewire\Component;
 use ReflectionClass;
-use WireComponents\LivewireSlideOvers\Contracts\PanelContract;
+use WikaGroup\LivewireSlideOvers\Contracts\PanelContract;
 
 class SlideOver extends Component
 {

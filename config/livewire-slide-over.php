@@ -25,7 +25,7 @@ return [
     |
     */
     'include_js' => true,
-    
+
     /*
     |--------------------------------------------------------------------------
     | Default Slide Over Position
@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'default_position' => \WireComponents\LivewireSlideOvers\Position::Right,
+    'default_position' => \WikaGroup\LivewireSlideOvers\Position::Right,
 
     /*
     |--------------------------------------------------------------------------

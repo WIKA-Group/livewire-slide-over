@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace WireComponents\LivewireSlideOvers\Tests;
+namespace WikaGroup\LivewireSlideOvers\Tests;
 
 use Livewire\LivewireServiceProvider;
-use WireComponents\LivewireSlideOvers\LivewireSlideOverServiceProvider;
+use WikaGroup\LivewireSlideOvers\LivewireSlideOverServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {

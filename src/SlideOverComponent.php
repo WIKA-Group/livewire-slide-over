@@ -4,7 +4,7 @@ namespace WikaGroup\LivewireSlideOvers;
 
 use InvalidArgumentException;
 use Livewire\Component;
-use WireComponents\LivewireSlideOvers\Contracts\PanelContract;
+use WikaGroup\LivewireSlideOvers\Contracts\PanelContract;
 
 abstract class SlideOverComponent extends Component implements PanelContract
 {
