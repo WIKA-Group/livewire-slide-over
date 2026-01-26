@@ -62,7 +62,7 @@ class LivewireSlideOverUpgrade
             return;
         }
 
-        file_put_contents($file->getPathname(), $content);
+        file_put_contents($file->getPathname(), $updatedContent);
 
         $this->recordsProcessed++;
     }
