@@ -17,11 +17,11 @@
     "require": {
         "php": "^8.2",
         "livewire/livewire": "^3.4 | ^4.0",
-        "spatie/laravel-package-tools": "^1.15"
+        "spatie/laravel-package-tools": "^1.92"
     },
     "require-dev": {
-        "orchestra/testbench": "^9.9",
-        "laravel/pint": "^1.1",
+        "orchestra/testbench": "^9.16",
+        "laravel/pint": "^1.27",
         "phpunit/phpunit": "^10.5"
     },
     "autoload": {
