@@ -3,6 +3,21 @@
 Slide Over Panel is a Livewire component that provides slide overs that support multiple children while maintaining state.
 This package is fork of [batnieluyo/livewire-slide-over](https://github.com/batnieluyo/livewire-slide-over), a livewire component that renders slide over with state management on livewire.
 
+### Upgrading from v1
+After updating the package, you can use the following command to automate the upgrade process.
+```shell
+php ./vendor/bin/slideover-upgrade
+```
+This command scans your application and configuration files and automatically updates deprecated namespaces to the new package structure.
+
+The old namespace is being deprecated and has been replaced by the new `WikaGroup` namespace.
+```php
+// Before
+use WireComponents\LivewireSlideOvers\SlideOverComponent;
+//After
+use WikaGroup\LivewireSlideOver\SlideOverComponent;
+```
+Please review the updated files to ensure the new namespace is applied consistently across your project.
 
 ### Installation
 
