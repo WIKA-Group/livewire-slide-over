@@ -5,7 +5,6 @@ namespace WikaGroup\LivewireSlideOver;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use WikaGroup\LivewireSlideOver\Console\Commands\LivewireSlideOverUpgrade;
 
 final class LivewireSlideOverServiceProvider extends PackageServiceProvider
 {
@@ -13,9 +12,6 @@ final class LivewireSlideOverServiceProvider extends PackageServiceProvider
     {
         $package->name('livewire-slide-over')
             ->hasConfigFile()
-            ->hasCommands([
-                LivewireSlideOverUpgrade::class,
-            ])
             ->hasViews();
     }
 
