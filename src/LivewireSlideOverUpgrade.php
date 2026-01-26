@@ -7,23 +7,36 @@ use RecursiveIteratorIterator;
 
 class LivewireSlideOverUpgrade
 {
+    private array $directories = [
+        'app',
+        'config',
+    ];
+
     private int $recordsProcessed = 0;
 
-    public static function handle(string $projectRoot): void
+    public function handle(string $projectRoot): void
     {
-        $files = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator($projectRoot . '/app')
-        );
+        foreach ($this->directories as $directory) {
+            $dir = $projectRoot . '/' . $directory;
 
-        foreach ($files as $file) {
-            if (!$file->isFile()) {
+            if (!is_dir($dir)) {
                 continue;
             }
 
-            self::processFile($file);
+            $files = new RecursiveIteratorIterator(
+                new RecursiveDirectoryIterator($dir)
+            );
+
+            foreach ($files as $file) {
+                if (!$file->isFile()) {
+                    continue;
+                }
+
+                self::processFile($file);
+            }
         }
 
-        echo self::$recordsProcessed . " file(s) processed.\n\n";
+        echo $this->recordsProcessed . " file(s) processed.\n\n";
 
         echo "Livewire slide over namespaces updated.\n";
     }
