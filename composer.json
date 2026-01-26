@@ -35,7 +35,7 @@
         }
     },
     "bin": [
-        "bin/upgrade.php"
+        "bin/slideover-upgrade"
     ],
     "extra": {
         "laravel": {
