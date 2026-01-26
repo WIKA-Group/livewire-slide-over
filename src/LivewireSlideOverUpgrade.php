@@ -43,12 +43,24 @@ class LivewireSlideOverUpgrade
 
     public function processFile($file): void
     {
+        if ($file->getExtension() !== 'php') {
+            return;
+        }
+
         $content = file_get_contents($file->getPathname());
 
-        $content = str_replace(
+        if ($content === false) {
+            return;
+        }
+
+        $updatedContent = str_replace(
             'WireComponents\\LivewireSlideOvers\\',
             'WikaGroup\\LivewireSlideOver\\',
             $content);
+
+        if ($content === $updatedContent) {
+            return;
+        }
 
         file_put_contents($file->getPathname(), $content);
 
