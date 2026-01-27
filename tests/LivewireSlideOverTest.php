@@ -10,7 +10,7 @@ use WikaGroup\LivewireSlideOver\Tests\Components\InvalidSlideOver;
 
 class LivewireSlideOverTest extends TestCase
 {
-    public function test_open_slide_over_event_listener(): void
+    public function testOpenSlideOverEventListener(): void
     {
         // Demo slide over component
         Livewire::component('demo-slide-over', DemoSlideOver::class);
@@ -51,7 +51,7 @@ class LivewireSlideOverTest extends TestCase
             ->assertSee(['Hello World', 1, '42']);
     }
 
-    public function test_destroy_component_event_listener(): void
+    public function testDestroyComponentEventListener(): void
     {
         // Demo slide over component
         Livewire::component('demo-slide-over', DemoSlideOver::class);
@@ -86,33 +86,27 @@ class LivewireSlideOverTest extends TestCase
             ->assertSet('components', []);
     }
 
-    public function test_slide_over_reset(): void
+    public function testSlideOverReset(): void
     {
         Livewire::component('demo-slide-over', DemoSlideOver::class);
 
         Livewire::test(SlideOver::class)
-            ->dispatch('openPanel', 'demo-slide-over')
-            ->set('components', [
-                'some-component' => [
-                    'name' => 'demo-slide-over',
-                    'arguments' => ['bar'],
-                    'modalAttributes' => [],
-                ],
-            ])
-            ->set('activeComponent', 'some-component')
+            ->dispatch('openPanel', component: 'demo-slide-over', arguments: ['message' => 'Test'])
+            ->assertNotSet('activeComponent', null)
+            ->assertNotSet('components', [])
             ->call('resetState')
             // Verify properties are reset
             ->assertSet('activeComponent', null)
             ->assertSet('components', []);
     }
 
-    public function test_if_exception_is_thrown_if_modal_does_not_implement_contract(): void
+    public function testIfExceptionIsThrownIfSlideOverDoesNotImplementContract(): void
     {
         $component = InvalidSlideOver::class;
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage("[{$component}] does not implement [WikaGroup\LivewireSlideOver\Contracts\PanelContract] interface.");
 
-        Livewire::component('invalid-modal', $component);
-        Livewire::test(SlideOver::class)->dispatch('openPanel', component: 'invalid-modal');
+        Livewire::component('invalid-slide-over', $component);
+        Livewire::test(SlideOver::class)->dispatch('openPanel', component: 'invalid-slide-over');
     }
 }
