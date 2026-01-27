@@ -8,14 +8,17 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Reflector;
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 use ReflectionClass;
 use WikaGroup\LivewireSlideOver\Contracts\PanelContract;
 
 class SlideOver extends Component
 {
+    #[Locked]
     public ?string $activeComponent;
 
+    #[Locked]
     public array $components = [];
 
     public function resetState(): void
