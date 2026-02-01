@@ -17,6 +17,6 @@ final class LivewireSlideOverServiceProvider extends PackageServiceProvider
 
     public function bootingPackage(): void
     {
-        Livewire::component('slide-over', SlideOver::class);
+        Livewire::component('slide-over-panel', SlideOver::class);
     }
 }
