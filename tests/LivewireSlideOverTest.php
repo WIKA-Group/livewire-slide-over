@@ -34,7 +34,7 @@ class LivewireSlideOverTest extends TestCase
         $id = md5($component . serialize($arguments));
 
         Livewire::test(SlideOver::class)
-            ->dispatch('openPanel', component: $component, arguments: $arguments, panelAttributes: $panelAttributes)
+            ->dispatch('openPanel', panelComponent: $component, arguments: $arguments, panelAttributes: $panelAttributes)
             // Verify component is added to $components
             ->assertSet('components', [
                 $id => [
@@ -74,7 +74,7 @@ class LivewireSlideOverTest extends TestCase
         $id = md5($component . serialize($arguments));
 
         Livewire::test(SlideOver::class)
-            ->dispatch('openPanel', component: $component, arguments: $arguments, panelAttributes: $panelAttributes)
+            ->dispatch('openPanel', panelComponent: $component, arguments: $arguments, panelAttributes: $panelAttributes)
             ->assertSet('components', [
                 $id => [
                     'name' => $component,
@@ -91,7 +91,7 @@ class LivewireSlideOverTest extends TestCase
         Livewire::component('demo-slide-over', DemoSlideOver::class);
 
         Livewire::test(SlideOver::class)
-            ->dispatch('openPanel', component: 'demo-slide-over', arguments: ['message' => 'Test'])
+            ->dispatch('openPanel', panelComponent: 'demo-slide-over', arguments: ['message' => 'Test'])
             ->assertNotSet('activeComponent', null)
             ->assertNotSet('components', [])
             ->call('resetState')
@@ -107,6 +107,6 @@ class LivewireSlideOverTest extends TestCase
         $this->expectExceptionMessage("[{$component}] does not implement [WikaGroup\LivewireSlideOver\Contracts\PanelContract] interface.");
 
         Livewire::component('invalid-slide-over', $component);
-        Livewire::test(SlideOver::class)->dispatch('openPanel', component: 'invalid-slide-over');
+        Livewire::test(SlideOver::class)->dispatch('openPanel', panelComponent: 'invalid-slide-over');
     }
 }
