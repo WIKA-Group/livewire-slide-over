@@ -27,24 +27,24 @@ class SlideOver extends Component
         $this->activeComponent = null;
     }
 
-    public function openPanel($component, $arguments = [], $panelAttributes = []): void
+    public function openPanel($panelComponent, $arguments = [], $panelAttributes = []): void
     {
         $requiredInterface = PanelContract::class;
-        $componentClass = $this->resolveComponentClass($component);
+        $componentClass = $this->resolveComponentClass($panelComponent);
         $reflect = new ReflectionClass($componentClass);
 
         if ($reflect->implementsInterface($requiredInterface) === false) {
             throw new Exception("[{$componentClass}] does not implement [{$requiredInterface}] interface.");
         }
 
-        $id = md5($component . serialize($arguments));
+        $id = md5($panelComponent . serialize($arguments));
 
         $arguments = collect($arguments)
             ->merge($this->resolveComponentProps($arguments, new $componentClass))
             ->all();
 
         $this->components[$id] = [
-            'name' => $component,
+            'name' => $panelComponent,
             'arguments' => $arguments,
             'panelAttributes' => array_merge([
                 'closeOnClickAway' => $componentClass::closePanelOnClickAway(),

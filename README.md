@@ -64,13 +64,13 @@ To open a slide over you will need to dispatch an event. To open the `ShoppingCa
 
 ```html
 <!-- Outside of any Livewire component -->
-<button onclick="Livewire.dispatch('openPanel', { component: 'shopper-cart' })">View cart</button>
+<button onclick="Livewire.dispatch('openPanel', { panelComponent: 'shopper-cart' })">View cart</button>
 
 <!-- Inside existing Livewire component -->
-<button wire:click="$dispatch('openPanel', { component: 'shopping-cart' })">View cart</button>
+<button wire:click="$dispatch('openPanel', { panelComponent: 'shopping-cart' })">View cart</button>
 
 <!-- Taking namespace into account for component Shop/Actions/ShoppingCart -->
-<button wire:click="$dispatch('openPanel', { component: 'shop.actions.shopping-cart' })">View cart</button>
+<button wire:click="$dispatch('openPanel', { panelComponent: 'shop.actions.shopping-cart' })">View cart</button>
 ```
 
 ### TailwindCSS
